@@ -1,0 +1,53 @@
+generated: '2026-08-04'
+method: probed
+source: live GET of /.well-known/* on every Octane host reachable from apis.yml + the dealer portal runtime config
+note: >-
+  No /.well-known/ document is published on any Octane host. Every path below was fetched
+  anonymously on 2026-08-04 and returned the status recorded. octane.co answers 404 with the
+  marketing site's React 404 shell; dealer.octane.co is an S3/CloudFront single-page app that
+  answers 403 AccessDenied for any unmatched key; los.octane.co (the dealer portal's API host,
+  discovered in https://dealer.octane.co/config.js as API_BASE_URL) answers 404 with a Django
+  "Page Not Found - Octane" template. No document was saved because none exists.
+hosts:
+- host: https://octane.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://dealer.octane.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+- host: https://los.octane.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://www.roadrunnerfinancial.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404

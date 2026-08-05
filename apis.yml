@@ -1,7 +1,15 @@
 aid: octane-lending
 name: Octane Lending
-description: 'Octane Lending is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Octane (Octane Lending, Inc.) is a New York City fintech founded in 2014 that makes
+  powersports, outdoor power equipment and recreational-vehicle financing as simple as paying cash.
+  It runs an end-to-end digital lending platform — instant soft-pull prequalification for consumers,
+  real-time credit decisioning and eContracting through its in-house lender Roadrunner Financial,
+  Inc., and loan servicing — connecting more than 4,000 dealer partners and 30-plus OEMs with prime
+  through non-prime buyers. Its Dealer Portal 2.0 and dealer-management-system integrations (AppOne,
+  Ekho and similar DMS platforms) submit credit applications and return decisions over a partner API
+  whose credentials are coordinated privately by Octane account managers; Octane publishes no public
+  developer portal, API documentation or machine-readable specification.'
+image: https://octane.co/o/wp-content/uploads/2019/11/octane-sq-blue.png
 url: https://raw.githubusercontent.com/api-evangelist/octane-lending/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +20,13 @@ created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Financial Services
+- Lending
+- Consumer Finance
+- Powersports
+- Fintech
+- Loan Origination
+- Dealer Software
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +34,55 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/octane-lending-domain-security.yml
 - type: Website
+  url: https://octane.co/o/
+- type: SecondaryMarket
   url: https://forgeglobal.com/octane-lending_stock/
+- type: Blog
+  url: https://octane.co/o/blog/
+- type: Press
+  url: https://octane.co/o/press/
+- type: Support
+  url: https://octane.co/o/who-we-are/contact-us/
+- type: HelpCenter
+  url: https://octane.co/o/who-we-are/help-faq/
+- type: SignUp
+  url: https://octane.co/o/dealer-signup/
+- type: Login
+  url: https://dealer.octane.co/
+- type: TermsOfService
+  url: https://octane.co/o/terms-of-service/
+- type: PrivacyPolicy
+  url: https://octane.co/o/privacy-policy/
+- type: GitHubOrganization
+  url: https://github.com/OctaneLending
+- type: LLMsTxt
+  url: llms/octane-lending-llms.txt
+x-enrichment:
+  date: '2026-08-04'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: >-
+    Octane markets DMS integrations (AppOne, Ekho) but publishes no developer host at all —
+    developer/docs/api.octane.co do not resolve — and the only reachable API host, los.octane.co
+    (the Dealer Portal's API_BASE_URL, read from https://dealer.octane.co/config.js), 302s straight
+    to the authenticated dealer portal, with partner API credentials coordinated one-to-one by an
+    Octane account manager.
+  evidence:
+  - url: https://los.octane.co/
+    status: 302
+  - url: https://los.octane.co/openapi.json
+    status: 404
+  - url: https://dealer.octane.co/openapi.json
+    status: 403
+  - url: https://octane.co/.well-known/agent-card.json
+    status: 404
+  - url: https://ekho.com/integration/octane-lending/
+    status: 200
+  checked: '2026-08-04'
