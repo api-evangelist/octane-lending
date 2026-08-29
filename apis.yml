@@ -9,6 +9,17 @@ description: 'Octane (Octane Lending, Inc.) is a New York City fintech founded i
   Ekho and similar DMS platforms) submit credit applications and return decisions over a partner API
   whose credentials are coordinated privately by Octane account managers; Octane publishes no public
   developer portal, API documentation or machine-readable specification.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://octane.co/o/wp-content/uploads/2019/11/octane-sq-blue.png
 url: https://raw.githubusercontent.com/api-evangelist/octane-lending/refs/heads/main/apis.yml
 x-type: company
