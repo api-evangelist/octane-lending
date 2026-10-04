@@ -43,7 +43,7 @@ created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
-- Financial-Services
+- Financial Services
 - Lending
 - Consumer Finance
 - Power-Sports
@@ -59,6 +59,7 @@ tags_raw:
 - Fintech
 - Loan Origination
 - Dealer Software
+- Financial-Services
 apis: []
 maintainers:
 - FN: Kin Lane
